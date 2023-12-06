@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css'
+import Home from "./Components/Home"
+import Login from "./Components/Login"
+import Signup from "./Components/Signup"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// npm install react-router-dom 
+// npm install axios
+// npm install cors
+// npm install mongoose
+// npm install -g nodemon
+// npm install react react-dom
+// npm install express
+import { useState } from 'react';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login/>}/>
+          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/home" element={<Home/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
